@@ -86,9 +86,9 @@
 		1E3679B32D6BDAF4006A5D5F /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				1E24287D2D63EBAF001601A2 /* FavoritesListVC.swift */,
 				1E24287F2D63EBE4001601A2 /* SearchVC.swift */,
 				1EF418C52D691C6300401BB7 /* FollowerListVC.swift */,
+				1E24287D2D63EBAF001601A2 /* FavoritesListVC.swift */,
 			);
 			name = Screens;
 			sourceTree = "<group>";
