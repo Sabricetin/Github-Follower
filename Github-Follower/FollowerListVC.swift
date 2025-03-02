@@ -46,7 +46,7 @@ class FollowerListVC: UIViewController {
         collectionView.register(FollowerCell.self, forCellWithReuseIdentifier: FollowerCell.reuseId)
     }
     
-
+ 
     
     
     func getFollowers(username: String , page: Int) {
