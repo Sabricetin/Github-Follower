@@ -46,7 +46,7 @@ class FollowerListVC: UIViewController {
         collectionView.register(FollowerCell.self, forCellWithReuseIdentifier: FollowerCell.reuseId)
     }
     
- 
+   
     
     
     func getFollowers(username: String , page: Int) {
@@ -64,7 +64,7 @@ class FollowerListVC: UIViewController {
                 self.followers.append(contentsOf: followers)
                 
                 if self.followers.isEmpty {
-                    let message = "This user doesn't any followers. Go follow them."
+                    let message = "This user doesn't any followers. Go follow them.😊"
                     DispatchQueue.main.async { self.showEmptStateView(with: message, in: self.view) }
                     return
                     
