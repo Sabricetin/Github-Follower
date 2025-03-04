@@ -50,6 +50,12 @@ extension UIViewController {
             containerView.removeFromSuperview()
             containerView = nil
         }
-        
+    }
+    
+    func showEmptStateView(with message : String , in view: UIView) {
+        let emptyStateView = GFEmpty(message: message)
+        emptyStateView.frame = view.bounds
+        view.addSubview(emptyStateView)
     }
 }
+
