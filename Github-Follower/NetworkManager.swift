@@ -10,6 +10,7 @@ import UIKit
 class NetworkManager     {
    static let shared = NetworkManager()
     private let baseURL = "https://api.github.com/users/"
+    
     let cache = NSCache<NSString , UIImage>()
     
     private init() { }
@@ -56,7 +57,10 @@ class NetworkManager     {
         task.resume()
     }
     
-    func getUSerInfo(for username : String , completed: @escaping (Result<UserDetails, GFError>) -> Void) {
+    
+    
+   
+    func getUserInfo(for username : String , completed: @escaping (Result<User, GFError>) -> Void) {
  
         let endpoint = baseURL + "\(username)"
         
@@ -82,12 +86,20 @@ class NetworkManager     {
             }
             
             do {
+                print("Received JSON: \(String(data: data, encoding: .utf8) ?? "Invalid Data")")
+
                 let decoder = JSONDecoder()
-                decoder.keyDecodingStrategy = .convertFromSnakeCase
-                let UserDetails = try decoder.decode(UserDetails           .self, from: data)
-                completed(.success(UserDetails))
+//                let dateFormatter = DateFormatter()
+//                dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"
+//                dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
+//                decoder.dateDecodingStrategy = .formatted(dateFormatter)
+                //decoder.keyDecodingStrategy = .convertFromSnakeCase
+                let User = try decoder.decode(User.self, from: data)
+                completed(.success(User))
                 
             } catch {
+                print("Decoding error: \(error.localizedDescription)")
+
                     completed(.failure(.invalidData))
                 
                 
@@ -97,4 +109,5 @@ class NetworkManager     {
         task.resume()
     }
 
+    
 }
