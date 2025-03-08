@@ -22,6 +22,8 @@
 		1E5FF3492D6524E40043BB3F /* GFTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5FF3482D6524E40043BB3F /* GFTextField.swift */; };
 		1EB459902D7C8AA400B07163 /* GFItemInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB4598F2D7C8AA300B07163 /* GFItemInfoView.swift */; };
 		1EB459922D7CAA9000B07163 /* GFITemInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB459912D7CAA9000B07163 /* GFITemInfoVC.swift */; };
+		1EB459942D7CF9E900B07163 /* GfRepoItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB459932D7CF9E900B07163 /* GfRepoItemVC.swift */; };
+		1EB459962D7CFBED00B07163 /* GFFollowerItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB459952D7CFBED00B07163 /* GFFollowerItemVC.swift */; };
 		1ED080FE2D779B3B004F9F8C /* GFEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED080FD2D779B3B004F9F8C /* GFEmpty.swift */; };
 		1ED081002D79D24A004F9F8C /* UserInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED080FF2D79D24A004F9F8C /* UserInfoVC.swift */; };
 		1ED081022D7A5062004F9F8C /* GFSecondaryTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED081012D7A5062004F9F8C /* GFSecondaryTitleLabel.swift */; };
@@ -54,6 +56,8 @@
 		1E5FF3482D6524E40043BB3F /* GFTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFTextField.swift; sourceTree = "<group>"; };
 		1EB4598F2D7C8AA300B07163 /* GFItemInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFItemInfoView.swift; sourceTree = "<group>"; };
 		1EB459912D7CAA9000B07163 /* GFITemInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFITemInfoVC.swift; sourceTree = "<group>"; };
+		1EB459932D7CF9E900B07163 /* GfRepoItemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GfRepoItemVC.swift; sourceTree = "<group>"; };
+		1EB459952D7CFBED00B07163 /* GFFollowerItemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFFollowerItemVC.swift; sourceTree = "<group>"; };
 		1ED080FD2D779B3B004F9F8C /* GFEmpty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFEmpty.swift; sourceTree = "<group>"; };
 		1ED080FF2D79D24A004F9F8C /* UserInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoVC.swift; sourceTree = "<group>"; };
 		1ED081012D7A5062004F9F8C /* GFSecondaryTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFSecondaryTitleLabel.swift; sourceTree = "<group>"; };
@@ -154,6 +158,16 @@
 			name = Support;
 			sourceTree = "<group>";
 		};
+		1EB459972D7CFC5900B07163 /* ItemInfoVCs */ = {
+			isa = PBXGroup;
+			children = (
+				1EB459912D7CAA9000B07163 /* GFITemInfoVC.swift */,
+				1EB459932D7CF9E900B07163 /* GfRepoItemVC.swift */,
+				1EB459952D7CFBED00B07163 /* GFFollowerItemVC.swift */,
+			);
+			name = ItemInfoVCs;
+			sourceTree = "<group>";
+		};
 		1ED080F72D779960004F9F8C /* Labels */ = {
 			isa = PBXGroup;
 			children = (
@@ -167,9 +181,9 @@
 		1ED080F82D77996A004F9F8C /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				1EB459972D7CFC5900B07163 /* ItemInfoVCs */,
 				1E3679AF2D6BC454006A5D5F /* GFAlertVC.swift */,
 				1ED081032D7A5106004F9F8C /* GFUserInfoHeaderVC.swift */,
-				1EB459912D7CAA9000B07163 /* GFITemInfoVC.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -330,7 +344,9 @@
 				1ED081002D79D24A004F9F8C /* UserInfoVC.swift in Sources */,
 				1EE061B32D70441A000B6D9B /* ErrorMessage.swift in Sources */,
 				1E3679AE2D6BC392006A5D5F /* GFBodyLabel.swift in Sources */,
+				1EB459942D7CF9E900B07163 /* GfRepoItemVC.swift in Sources */,
 				1EF68C252D6C5BF7007EDFFE /* Follower.swift in Sources */,
+				1EB459962D7CFBED00B07163 /* GFFollowerItemVC.swift in Sources */,
 				1E3679AC2D6BC07E006A5D5F /* GFTitleLabel.swift in Sources */,
 				1EE061B02D6FB2F6000B6D9B /* NetworkManager.swift in Sources */,
 				1EF418C62D691C6300401BB7 /* FollowerListVC.swift in Sources */,
