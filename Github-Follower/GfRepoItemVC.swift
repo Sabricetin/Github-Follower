@@ -23,4 +23,10 @@ class GfRepoItemVC: GFITemInfoVC {
         
     }
     
+    override func actionButtonTapped () {
+        
+        delegate.didTapGithubProfile(for: user)
+        
+    }
+    
 }
