@@ -20,6 +20,7 @@
 		1E3679B22D6BD33E006A5D5F /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3679B12D6BD33E006A5D5F /* UIViewController+Ext.swift */; };
 		1E5FF3472D6522810043BB3F /* GFButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5FF3462D6522810043BB3F /* GFButton.swift */; };
 		1E5FF3492D6524E40043BB3F /* GFTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5FF3482D6524E40043BB3F /* GFTextField.swift */; };
+		1E79EB482D806AED008230C5 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E79EB472D806AED008230C5 /* PersistenceManager.swift */; };
 		1EB459902D7C8AA400B07163 /* GFItemInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB4598F2D7C8AA300B07163 /* GFItemInfoView.swift */; };
 		1EB459922D7CAA9000B07163 /* GFITemInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB459912D7CAA9000B07163 /* GFITemInfoVC.swift */; };
 		1EB459942D7CF9E900B07163 /* GfRepoItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB459932D7CF9E900B07163 /* GfRepoItemVC.swift */; };
@@ -56,6 +57,7 @@
 		1E3679B12D6BD33E006A5D5F /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		1E5FF3462D6522810043BB3F /* GFButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFButton.swift; sourceTree = "<group>"; };
 		1E5FF3482D6524E40043BB3F /* GFTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFTextField.swift; sourceTree = "<group>"; };
+		1E79EB472D806AED008230C5 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 		1EB4598F2D7C8AA300B07163 /* GFItemInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFItemInfoView.swift; sourceTree = "<group>"; };
 		1EB459912D7CAA9000B07163 /* GFITemInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFITemInfoVC.swift; sourceTree = "<group>"; };
 		1EB459932D7CF9E900B07163 /* GfRepoItemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GfRepoItemVC.swift; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 			isa = PBXGroup;
 			children = (
 				1EE061AF2D6FB2F6000B6D9B /* NetworkManager.swift */,
+				1E79EB472D806AED008230C5 /* PersistenceManager.swift */,
 			);
 			name = Managers;
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 				1E3679AE2D6BC392006A5D5F /* GFBodyLabel.swift in Sources */,
 				1EB459942D7CF9E900B07163 /* GfRepoItemVC.swift in Sources */,
 				1EF68C252D6C5BF7007EDFFE /* Follower.swift in Sources */,
+				1E79EB482D806AED008230C5 /* PersistenceManager.swift in Sources */,
 				1EB459962D7CFBED00B07163 /* GFFollowerItemVC.swift in Sources */,
 				1E3679AC2D6BC07E006A5D5F /* GFTitleLabel.swift in Sources */,
 				1EE061B02D6FB2F6000B6D9B /* NetworkManager.swift in Sources */,

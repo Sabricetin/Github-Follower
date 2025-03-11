@@ -86,7 +86,7 @@ class NetworkManager     {
             }
             
             do {
-                print("Received JSON: \(String(data: data, encoding: .utf8) ?? "Invalid Data")")
+              //  print("Received JSON: \(String(data: data, encoding: .utf8) ?? "Invalid Data")")
 
                 let decoder = JSONDecoder()
 //                let dateFormatter = DateFormatter()
@@ -98,11 +98,9 @@ class NetworkManager     {
                 completed(.success(User))
                 
             } catch {
-                print("Decoding error: \(error.localizedDescription)")
+              //  print("Decoding error: \(error.localizedDescription)")
 
                     completed(.failure(.invalidData))
-                
-                
             }
             
         }
