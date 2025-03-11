@@ -42,7 +42,7 @@ enum PersistenceManager  {
                     retrievedFavorites.removeAll { $0.login == favorite.login}
                 }
                 
-                completed(save(favorites: favorites))
+                completed(save(favorites: retrievedFavorites))
                 
             case .failure(let error):
                 completed(error)
@@ -65,10 +65,12 @@ enum PersistenceManager  {
             completed(.success(favorites))
             
         } catch {
-            completed(.failure(.uanbleToFavorite))
+            completed(.failure(.unableToFavorite))
         }
         
     }
+    
+    
     
     static func save(favorites: [Follower]) -> GFError? {
             
@@ -78,7 +80,7 @@ enum PersistenceManager  {
             defaults.set(encodedFavorites , forKey: Keys.favorites)
             return nil
         } catch {
-            return .uanbleToFavorite
+            return .unableToFavorite
         }
         
     }
