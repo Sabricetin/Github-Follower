@@ -49,7 +49,6 @@ extension UIViewController {
         NSLayoutConstraint.activate([
             activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor)
-        
         ])
         activityIndicator.startAnimating()
     }
@@ -62,7 +61,7 @@ extension UIViewController {
     }
     
     func showEmptStateView(with message : String , in view: UIView) {
-        let emptyStateView = GFEmpty(message: message)
+        let emptyStateView = GFEmptyStateView(message: message)
         emptyStateView.frame = view.bounds
         view.addSubview(emptyStateView)
     }
