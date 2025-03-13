@@ -12,7 +12,7 @@ protocol FollowerListVCDelegate : class {
     
 }
 
-class FollowerListVC: UIViewController {
+class FollowerListVC: GFDataLoadingVC   {
 
     enum Section { case main }
     

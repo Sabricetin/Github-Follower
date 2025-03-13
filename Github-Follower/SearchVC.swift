@@ -5,9 +5,9 @@
 //  Created by Sabri Çetin on 18.02.2025.
 //
 
-import UIKit
+import UIKit  
 
-class SearchVC: UIViewController {
+class SearchVC: GFDataLoadingVC {
     
     let logoImageView = UIImageView()
     let usernameTextField = GFTextField()

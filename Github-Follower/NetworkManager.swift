@@ -93,7 +93,8 @@ class NetworkManager     {
 //                dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"
 //                dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
 //                decoder.dateDecodingStrategy = .formatted(dateFormatter)
-                //decoder.keyDecodingStrategy = .convertFromSnakeCase
+//                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                
                 let User = try decoder.decode(User.self, from: data)
                 completed(.success(User))
                 
@@ -107,5 +108,41 @@ class NetworkManager     {
         task.resume()
     }
 
+    
+    func downloadImage(from urlString : String , completed: @escaping (UIImage?) -> Void) {
+        
+        
+        let cacheKey = NSString(string: urlString)
+        
+        if let image = cache.object(forKey: cacheKey) {
+            completed(image)
+            return
+        }
+        
+        guard let url = URL(string: urlString) else {
+            completed(nil)
+            return
+            
+        }
+        
+        let task = URLSession.shared.dataTask(with: url) { [weak self] data , response , error in
+            guard let self = self,
+                error == nil ,
+                let response = response as? HTTPURLResponse , response.statusCode == 200 ,
+                let data = data ,
+                  let image = UIImage(data: data) else {
+                completed(nil)
+                return
+            }
+
+            self.cache.setObject(image, forKey: cacheKey)
+           
+           completed(image)
+            
+        }
+        task.resume()
+        
+    
+    }
     
 }

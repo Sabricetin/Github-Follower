@@ -13,7 +13,7 @@ protocol UserInfoVCDelegete : class {
     
 }
 
-class UserInfoVC: UIViewController {
+class UserInfoVC: GFDataLoadingVC    {
     
     let headerView = UIView()
     let itemViewOne = UIView()
