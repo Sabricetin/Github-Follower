@@ -20,6 +20,7 @@ class SearchVC: GFDataLoadingVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
+        view.addSubsviews(views: logoImageView , usernameTextField , callToActionButton )
         configureLogoImageView()
         configureTextField()
         configureCallToActionButton()
@@ -43,7 +44,7 @@ class SearchVC: GFDataLoadingVC {
         
         guard isUsernameEntered  else { 
             
-            presentGFAlertOnMainThread(title: "Epmpty Username", message: "Please enter a username. We need to know who to look for ", buttonTitle: "OK")
+            presentGFAlertOnMainThread(title: "Epmpty Username", message: "Please enter a username. We need to know who to look for  🙂", buttonTitle: "OK")
             return
             
             }
@@ -57,7 +58,6 @@ class SearchVC: GFDataLoadingVC {
     }
     
     func configureLogoImageView() {
-        view.addSubview(logoImageView)
         logoImageView.translatesAutoresizingMaskIntoConstraints = false
         logoImageView.image = Images.ghLogo
         
@@ -76,7 +76,6 @@ class SearchVC: GFDataLoadingVC {
     }
     
     func  configureTextField() {
-        view.addSubview(usernameTextField)
         usernameTextField.delegate = self
         
         NSLayoutConstraint.activate([
@@ -88,7 +87,6 @@ class SearchVC: GFDataLoadingVC {
     }
     
     func configureCallToActionButton() {
-        view.addSubview(callToActionButton)
         callToActionButton.addTarget(self, action: #selector(pushFollowerListVC), for: .touchUpInside)
         
         NSLayoutConstraint.activate([

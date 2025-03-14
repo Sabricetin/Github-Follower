@@ -64,9 +64,7 @@ class GFITemInfoVC: UIViewController {
     @objc   func actionButtonTapped() {}
     
   private   func layout () {
-        
-      view.addSubview(stackView)
-      view.addSubview(actionButton)
+      view.addSubsviews(views: stackView , actionButton)
       
       
       stackView.translatesAutoresizingMaskIntoConstraints  = false

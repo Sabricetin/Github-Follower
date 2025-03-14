@@ -29,10 +29,8 @@ class GFItemInfoView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     private func configure () {
-
-        addSubview(symbolImageView)
-        addSubview(titleLabel)
-        addSubview(countLabel)
+        
+        addSubsviews(views: symbolImageView , titleLabel , countLabel)
         
         
         symbolImageView.translatesAutoresizingMaskIntoConstraints = false
