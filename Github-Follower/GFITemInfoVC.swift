@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 class GFITemInfoVC: UIViewController {
     
     let stackView = UIStackView()
@@ -15,7 +16,7 @@ class GFITemInfoVC: UIViewController {
     let actionButton = GFButton()
     
     var user: User!
-    weak var delegate: UserInfoVCDelegete!
+   
     
     
     init (user: User) {

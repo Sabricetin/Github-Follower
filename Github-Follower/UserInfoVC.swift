@@ -7,9 +7,8 @@
 
 import UIKit
 
-protocol UserInfoVCDelegete : class {
-    func didTapGithubProfile(for user : User)
-    func didTapGetFollowers(for user: User)
+protocol UserInfoVCDelegate : class {
+    func didRequestFollowers (for username: String)
     
 }
 
@@ -22,7 +21,7 @@ class UserInfoVC: GFDataLoadingVC    {
     var itemViews: [UIView] = []
     
     var username : String!
-    weak var delegate: FollowerListVCDelegate!
+    weak var delegate: UserInfoVCDelegate!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,15 +53,10 @@ class UserInfoVC: GFDataLoadingVC    {
         
     }
     func configureUIElements(with user : User) {
+
         
-        let repoItemVC = GfRepoItemVC(user: user)
-        repoItemVC.delegate = self
-        
-        let followerItemVC = GFFollowerItemVC(user: user)
-        followerItemVC.delegate = self
-        
-        self.add(childVC: repoItemVC, to: self.itemViewOne)
-        self.add(childVC: followerItemVC, to: self.itemViewTwo)
+        self.add(childVC: GfRepoItemVC(user: user, delegate: self), to: self.itemViewOne)
+        self.add(childVC: GFFollowerItemVC(user: user, delegate: self), to: self.itemViewTwo)
         self.add(childVC: GFUserInfoHeaderVC(user: user), to: self.headerView)
         self.dateLabel.text =  "Github since \(user.createdAt.convertToDisplayFormat())"
         
@@ -123,29 +117,29 @@ class UserInfoVC: GFDataLoadingVC    {
 
 }
 
-
-extension UserInfoVC : UserInfoVCDelegete {
-    
+extension UserInfoVC : GFRepoITemVCDelegate  {
     func didTapGithubProfile(for user: User) {
         
-        guard let url = URL(string: user.htmlUrl) else {
-            presentGFAlertOnMainThread(title: "İnvalid URL", message: "The url attached to this user is ivalid.", buttonTitle: "OK")
-            return
-        }
-        presentSafariVC(with: url)
-        
+           guard let url = URL(string: user.htmlUrl) else {
+               presentGFAlertOnMainThread(title: "İnvalid URL", message: "The url attached to this user is ivalid.", buttonTitle: "OK")
+               return
+           }
+           presentSafariVC(with: url)
     }
     
+    
+}
+
+extension UserInfoVC : GFFollowerItemVCDelegate  {
     func didTapGetFollowers(for user: User) {
         
         guard user.followers != 0 else {
             presentGFAlertOnMainThread(title: "No Followers", message: "This user has no followers. What A shame 😔." , buttonTitle: "So sad")
             return
         }
-                
+        
         delegate.didRequestFollowers(for:  user.login)
         dismisVC()
     }
     
-
 }
