@@ -20,6 +20,19 @@ extension UIViewController {
         }
         
     }
+
+    func presentDefaultError() {
+        
+            let alertVC = GFAlertVC(alertTitle: "Something Went Wrong",
+                                    message: "We were unable to complete your task at this time . Please try again .",
+                                    buttonTitle: "OK")
+            alertVC.modalPresentationStyle = .overFullScreen
+            alertVC.modalTransitionStyle = .crossDissolve
+            self.present(alertVC , animated: true)
+        
+        
+    }
+    
     
     func presentSafariVC(with url: URL) {
         
