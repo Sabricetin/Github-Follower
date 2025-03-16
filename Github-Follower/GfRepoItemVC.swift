@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol GFRepoITemVCDelegate : class {
+protocol GFRepoITemVCDelegate : AnyObject {
     func didTapGithubProfile(for user : User)
     
 }
@@ -35,10 +35,10 @@ class GfRepoItemVC: GFITemInfoVC {
     private func configureItems() {
         itemInfoViewOne.set(itemInfoType: .repos, withCount: user.publicRepos)
         itemInfoViewTwo.set(itemInfoType: .gists, withCount: user.publicGists)
-        actionButton.set(bacgroundColor: .systemPurple, title: "Github Profile")
+        actionButton.set(color: .systemPurple, title: "Github Profile", systemImageName: "person.fill")
         
     }
-    
+     
     override func actionButtonTapped () {
         
         delegate.didTapGithubProfile(for: user)
