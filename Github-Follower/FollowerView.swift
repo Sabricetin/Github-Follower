@@ -19,7 +19,7 @@ struct FollowerView: View {
                     .resizable()
                     .aspectRatio(contentMode: .fit)
             } placeholder: {
-                Image("avatar-placeholder")
+                Image(.avatarPlaceholderDark)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
             }

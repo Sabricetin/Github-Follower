@@ -49,6 +49,26 @@ class FollowerListVC: GFDataLoadingVC   {
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
+    
+    override func updateContentUnavailableConfiguration(using state: UIContentUnavailableConfigurationState) {
+        if followers.isEmpty && !isLoadingMoreFollowers {
+            var config = UIContentUnavailableConfiguration.empty()
+            config.image = .init(systemName: "person.slash")
+            config.text = "No Followers"
+            config.secondaryText = "This user has no followers. Go follow them!"
+            contentUnavailableConfiguration = config
+        } else if isSearching && filteredFollowers.isEmpty {
+            contentUnavailableConfiguration = UIContentUnavailableConfiguration.search()
+            
+        } else {
+            contentUnavailableConfiguration = nil
+
+        }
+    }
+    
+    
+    
+    
     func configureViewController () {
         view.backgroundColor = .systemBackground
         navigationController?.navigationBar.prefersLargeTitles  = true
@@ -123,13 +143,7 @@ class FollowerListVC: GFDataLoadingVC   {
         
         if followers.count < 100 { self.hasMoreFollowers = false }
         self.followers.append(contentsOf: followers)
-        
-        if self.followers.isEmpty {
-            let message = "This user doesn't any followers. Go follow them.😊"
-            DispatchQueue.main.async { self.showEmptStateView(with: message, in: self.view) }
-            return
-            
-        }
+        setNeedsUpdateContentUnavailableConfiguration()
         
         self.updateData(on: self.followers)
         
@@ -140,7 +154,6 @@ class FollowerListVC: GFDataLoadingVC   {
         dataSource = UICollectionViewDiffableDataSource<Section , Follower> (collectionView: collectionView, cellProvider: { (collectionView, indexPath, follower) -> UICollectionViewCell? in
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FollowerCell.reuseId, for: indexPath) as! FollowerCell
             cell.set(follower: follower)
-            cell.usernameLabel
             return cell
         })
     }
@@ -250,6 +263,7 @@ extension FollowerListVC : UISearchResultsUpdating  {
         isSearching = true
         filteredFollowers = followers.filter { $0.login.lowercased().contains(filter.lowercased()) }
         updateData(on: filteredFollowers)
+        setNeedsUpdateContentUnavailableConfiguration()
     }
   
     
