@@ -77,6 +77,7 @@ Yardımcı işlevler içeren ek kodlar:
    - Bir iOS simülatöründe veya fiziksel cihazda çalıştırın.
 
 ## Ekran Görüntüleri
+![GFollower](https://github.com/user-attachments/assets/ee2e9faf-b114-47fe-a2c1-3c358bf580b1)
 
 
 ## Katkıda Bulunma
