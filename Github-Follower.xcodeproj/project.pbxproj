@@ -27,6 +27,7 @@
 		1E79EB4E2D81B2E6008230C5 /* GFTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E79EB4D2D81B2E6008230C5 /* GFTabBarController.swift */; };
 		1E79EB502D82DB9A008230C5 /* GFAlertContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E79EB4F2D82DB9A008230C5 /* GFAlertContainerView.swift */; };
 		1E79EB522D82ED18008230C5 /* GFDataLoadingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E79EB512D82ED18008230C5 /* GFDataLoadingVC.swift */; };
+		1E9D13292D87B1B400A5B6B4 /* FollowerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9D13282D87B1B400A5B6B4 /* FollowerView.swift */; };
 		1EB459902D7C8AA400B07163 /* GFItemInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB4598F2D7C8AA300B07163 /* GFItemInfoView.swift */; };
 		1EB459922D7CAA9000B07163 /* GFITemInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB459912D7CAA9000B07163 /* GFITemInfoVC.swift */; };
 		1EB459942D7CF9E900B07163 /* GfRepoItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB459932D7CF9E900B07163 /* GfRepoItemVC.swift */; };
@@ -70,6 +71,7 @@
 		1E79EB4D2D81B2E6008230C5 /* GFTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFTabBarController.swift; sourceTree = "<group>"; };
 		1E79EB4F2D82DB9A008230C5 /* GFAlertContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFAlertContainerView.swift; sourceTree = "<group>"; };
 		1E79EB512D82ED18008230C5 /* GFDataLoadingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFDataLoadingVC.swift; sourceTree = "<group>"; };
+		1E9D13282D87B1B400A5B6B4 /* FollowerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerView.swift; sourceTree = "<group>"; };
 		1EB4598F2D7C8AA300B07163 /* GFItemInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFItemInfoView.swift; sourceTree = "<group>"; };
 		1EB459912D7CAA9000B07163 /* GFITemInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFITemInfoVC.swift; sourceTree = "<group>"; };
 		1EB459932D7CF9E900B07163 /* GfRepoItemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GfRepoItemVC.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				1E2428682D61310B001601A2 /* Github-Follower */,
+				1E3679B32D6BDAF4006A5D5F /* Screens */,
 				1E2428672D61310B001601A2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -126,7 +129,6 @@
 				1E3679B62D6BDC46006A5D5F /* Support */,
 				1E3679B52D6BDBAE006A5D5F /* Extensions */,
 				1E3679B42D6BDB34006A5D5F /* Custom Views */,
-				1E3679B32D6BDAF4006A5D5F /* Screens */,
 			);
 			path = "Github-Follower";
 			sourceTree = "<group>";
@@ -140,6 +142,7 @@
 				1ED080FF2D79D24A004F9F8C /* UserInfoVC.swift */,
 			);
 			name = Screens;
+			path = "Github-Follower";
 			sourceTree = "<group>";
 		};
 		1E3679B42D6BDB34006A5D5F /* Custom Views */ = {
@@ -187,6 +190,15 @@
 				1E79EB4D2D81B2E6008230C5 /* GFTabBarController.swift */,
 			);
 			name = TabBarControllers;
+			sourceTree = "<group>";
+		};
+		1E9D13272D87B18C00A5B6B4 /* FollowerCell */ = {
+			isa = PBXGroup;
+			children = (
+				1EE061B52D718C21000B6D9B /* FollowerCell.swift */,
+				1E9D13282D87B1B400A5B6B4 /* FollowerView.swift */,
+			);
+			name = FollowerCell;
 			sourceTree = "<group>";
 		};
 		1EB459972D7CFC5900B07163 /* ItemInfoVCs */ = {
@@ -276,7 +288,7 @@
 		1EE061B42D718C02000B6D9B /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				1EE061B52D718C21000B6D9B /* FollowerCell.swift */,
+				1E9D13272D87B18C00A5B6B4 /* FollowerCell */,
 				1E79EB4A2D80D5E7008230C5 /* FavoriteCell.swift */,
 			);
 			name = Cells;
@@ -361,6 +373,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E9D13292D87B1B400A5B6B4 /* FollowerView.swift in Sources */,
 				1E0675122D7B248200E94188 /* Constants.swift in Sources */,
 				1EF68C272D6C5D04007EDFFE /* User.swift in Sources */,
 				1E5FF3492D6524E40043BB3F /* GFTextField.swift in Sources */,
